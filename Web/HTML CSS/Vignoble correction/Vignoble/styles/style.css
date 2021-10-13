@@ -1,0 +1,341 @@
+:root{
+    --hauteur-menu:10px;
+    --couleur-grise-background: #5755557a;
+    --couleur-grise-section: rgba(151, 150, 150, 0.2);
+}
+
+@font-face {
+    font-family: channel;
+    src: url("../ressources/fonts/channel-webfont.ttf") format("truetype"),
+    url("../ressources/fonts/channel-webfont.woff") format("woff"),
+    url("../ressources/fonts/channel-webfont.svg") format("svg");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./ressources/images/bg_motif.gif");
+}
+a, h2 {
+    font-family: channel;
+}
+
+header {
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px rgba(255, 255, 255, 0.726) solid;
+    height: 4em;
+    z-index: 1000;
+}
+
+header > img {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+
+}
+
+header nav {
+    margin-left: 50%;
+    width: 50%;
+}
+
+.menu {
+    width: 100%;
+    padding-top: 1em;
+    float: inline-start;
+}
+
+.menu li {
+    list-style: none;
+}
+
+    .menu > li {
+    display: inline-block;
+    padding-left: 3%;
+    width: 15%;
+    right: 0;
+}
+
+.menu > li a{
+    color: white;
+    text-decoration: none;
+    padding: 3%;
+    text-align: center;
+    display: block;
+    /* width: 100%; */
+}
+
+.menu a:hover{
+    color: red;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    
+}
+
+.menu li:hover .submenu {
+    display: block;
+    width: 10%;
+}
+
+.submenu a {
+    border: solid 1px white;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+main {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2em 0;
+    background-color: var(--couleur-grise-background);
+}
+
+main > figure {
+    background-color: white;
+    box-shadow: 0 0 15px white;
+    margin: 0 2em 2em 2em;    
+}
+
+main > figure > img {
+    width: 100%;
+}
+
+main > figure figcaption {
+    padding: 1ex;
+    border-top: solid 2px var(--couleur-grise-background);
+    color: darkred;
+    font-size:large;
+    text-align: center;
+    font-family: channel;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2em;
+    gap: 3em;
+}
+
+.grid-container {
+    background-image: url("../ressources/images/bg_g.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 5em;
+    max-width: 350px;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 4em auto 6em;
+    grid-template-areas: "title logo"
+    "text text"
+    "link link";
+}
+
+.grid-container > h2 {
+    grid-area: title;
+    text-align: center;
+    color: white;
+}
+
+.grid-container > img {
+    grid-area: logo;
+}
+
+.grid-container > p {
+    grid-area: text;
+}
+
+.button-grid-container{
+    grid-area: link;
+}
+.button {
+    text-align: center;
+    padding-top: 1em;
+    transition: all 1s;
+}
+
+.button:hover {
+    transform: rotate(-10deg) scale(1.2);
+}
+
+.button > a {
+    color: white;
+    background-color: grey;
+    padding: 0 1ex;
+}
+
+
+.button:hover > a {
+    color: darkred;
+    text-shadow: 0 0 4px white;
+}
+
+.container-wine {
+    margin: 2em;
+    display: grid ;
+    grid-template-columns: 1fr 2fr ;
+    grid-template-rows: auto;
+    grid-template-areas: "selection gifts";
+    column-gap: 15px ;
+    column-gap: 15px;
+}
+.notre-selection {
+    background-color: var(--couleur-grise-section);
+    grid-row: 1;
+    grid-column: 1;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.container-wine h2 {
+    text-align: center;
+    color: white;
+    flex-grow: 1;
+}
+
+.notre-selection ul {
+    flex-grow: 2;
+    padding: 15px 0;
+    list-style: none;
+    align-content: space-between;
+}
+.notre-selection ul li {
+    border-top: solid 1px rgb(204, 204, 204);
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow-wrap: break-word;
+    flex-basis: 20%;
+}
+
+.flex-selection li::before {
+    content: ">>";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.404);
+    border: 3px rgba(0, 0, 0, 0.4) solid;
+    border-radius: 50%;
+}
+
+.flex-selection li:last-child {
+    border-bottom: solid 1px rgb(204, 204, 204);
+}
+
+.gifts {
+    background-color: var(--couleur-grise-section);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 50px;
+    column-gap: 20px;
+}
+
+.gifts-title {
+    grid-column: 1 / 3;
+    grid-row: 1 ;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.gifts img {
+   
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    border: white solid 3px;
+    margin: 5px;
+}
+
+.gifts text {
+    grid-column: 2;
+    grid-row: 2;
+    width: 110%;
+}
+
+.gifts h5 {
+    color:white;
+    font-size: 20px;
+    text-align:center;
+}
+
+.gifts p {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.moche {
+    display: grid;
+    grid-column: 2;
+    grid-row: 3 / 4;
+    align-items: center;
+    justify-content: center;   
+    
+}  
+.moche > a {
+    background-image: url("../ressources/images/lire.png"); 
+    background-repeat: repeat-x;
+    background-position:bottom;
+    transition: all 1s;
+}
+
+.moche:hover > a {
+    background-position:top;
+}
+
+hr {
+    border: 1px solid var(--couleur-grise-section);
+}
+
+
+
+
+footer{
+    background-image: url("../ressources/images/footer-bg.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2em;
+    border-top: 1px solid rgb(146, 145, 145);
+    
+} 
+footer nav{
+    display:grid;
+    grid-template-columns: repeat(5,1fr) 200px;
+    /* grid-template-rows:2; */
+    grid-template-areas:"footerMenu footerMenu footerMenu footerMenu footerMenu img";
+}
+.footer-picture{
+    grid-area: img;
+    align-items: center;
+}
+
+footer nav ul {
+    grid-area: footerMenu ;
+    display: grid ;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1 ;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+footer nav ul li  {
+    list-style-type: none ;
+    padding-top: 5%;
+    
+}
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    
+}
+

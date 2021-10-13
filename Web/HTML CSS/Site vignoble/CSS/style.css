@@ -1,0 +1,200 @@
+    @font-face {
+        font-family: toto;
+        src: url("../fonts/channel-webfont.ttf") format("truetype"); 
+    }
+    @font-face {
+        font-family:oldsih;
+        src: url("/fonts/OLDSIH__.TTF") format("truetype");
+    }
+    body 
+    {
+        color:black;
+        background-color:white;
+        background-image:url(../images/bg_motif.gif);
+        margin:0;
+    }
+  .container-flexbox0{
+      display: flex;
+      flex-direction: column;
+  }
+  .container p{
+    background-image:url("/images/bg_g.png");
+    background-repeat: no-repeat; 
+  }
+  .container{
+    display: flex;
+    height: 100%;
+    flex-grow: initial;
+    background-repeat: repeat(1,2,3);  
+  } 
+  .container article{
+    background-image:url("/images/bg_g.png");
+    display: inline-block;
+    background-repeat: no-repeat;
+   }
+    main{
+        margin:  10px 20% 10px 20%;  
+        background-color:rgb(175, 174, 174,0.4);
+    }
+     h3 {
+        color: white;
+        font-family: toto;
+        display: flex;
+        flex-direction: row;
+        text-align: center; 
+    }
+    a 
+    {
+        font-family: toto;
+        margin: 0px;
+        padding: 0px;
+        opacity: none;
+    } 
+    .banderole{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }  
+    .legende
+        {
+            color: darkred;
+            text-align: center;
+            background-color: white;
+            border: 2px solid white;
+            font-family: OLDSIH;
+            font-size: 35px;
+        }
+        nav
+        {
+            width: 100%;
+            height: 60px;
+            padding: 2px;
+            margin:0px;
+            background-color:rgba(100,100,100,.3);
+            position:sticky;
+            top:0px;
+            border-bottom: 2px solid white; 
+        } 
+        ul
+        {
+            margin-left: 40%;
+            margin-top: -10px;
+            background-color:solid;
+        }
+        nav ul
+        {
+            list-style-type: none;
+        }    
+        nav ul li
+        {
+            float: left;
+            width: 20%;
+            text-align:center;
+            position: relative;
+            display:inherit;
+            border-radius:0;
+        }
+        
+        nav ul::after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        nav a
+        {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 5px 0px;
+        }
+        
+        nav a:hover
+        {
+            color: white;
+            border-bottom: 0px solid black;
+            opacity: none;
+        }
+        
+        .sous
+        {
+            display: none;
+            box-shadow: 0px 0px 0px #CCC;
+            background-color:black;
+            position:absolute;
+            width: 100%;
+            z-index: 1000px;
+            opacity: none;
+        }
+        nav > ul li:hover .sous{
+            display: block;
+            background:#00000021;
+            border-bottom: 2px;
+            border-color:solid white;
+        }           
+        .sous li{
+            float: none;
+            width: 100%;
+            text-align: left;
+            border:solid 2px white;
+            margin-top:  20px; 
+        }
+        .sous a
+        {
+            padding: 10px;
+            border-bottom: none;
+        }
+        .sous a:hover
+        {
+            border-bottom:none;
+
+        }
+        .deroulant > a::after
+        {
+            content:" ▼";
+            font-size: 12px;
+            display:inline-block;
+            position:relative;
+            border-radius:8px 8px 0 0;
+        }
+        .figue
+        {
+            text-align:center;
+            margin: 0;
+            width: 100%;
+        }
+
+        figcaption.legende{
+            text-align: center;
+            font-family: oldsih;
+            border-bottom: 2px solid white;
+        }
+
+    main img
+        {
+            width: 100%;
+        }
+
+        .color:hover
+        {
+            color:red;
+        }
+        .logo
+        {
+            text-align: right; 
+            float: left; 
+            margin: 7px;
+            padding: 7px;
+        }
+        .figue img{
+            margin: 0; 
+        }
+        .logo img{
+            padding: 23px;
+        }
+        article > figure{
+            width: 10%;
+            height: 10%; 
+        }
